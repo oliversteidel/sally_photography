@@ -1,0 +1,91 @@
+$bg-color: white;
+$primary-color: #a26952;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    //outline: 1px solid blue;
+}
+
+body {
+    // overflow-x: hidden;
+    height: 100%;
+    width: 100vw;
+}
+
+a,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    font-family: "Playfair Display", serif;
+    color: $primary-color;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    color: $primary-color;
+    font-weight: 400;
+}
+
+p {
+    font-family: "Raleway", sans-serif;
+    color: $primary-color;
+    line-height: 1.5em;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+
+
+// helper classes
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.jc-c {
+    justify-content: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.hide-on-large {
+    @media only screen and (min-width: 64.0625rem) {
+        display: none;;
+    }
+}
+
+.hide-on-small {
+    @media only screen and (max-width: 62.5rem) {
+        display: none;
+    }
+}
