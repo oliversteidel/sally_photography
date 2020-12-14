@@ -46,6 +46,10 @@ h3 {
     font-weight: 400;
 }
 
+.headline--section {
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
 p {
     font-family: "Raleway", sans-serif;
     color: $primary-color;
@@ -53,7 +57,19 @@ p {
     font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
+.text {
+    margin-bottom: 3rem;
+}
 
+.cta {
+    width: 190px;
+    height: 50px;    
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: $primary-color;
+    background: $bg-color;
+    border: 1px solid $primary-color;
+}
 
 // helper classes
 
@@ -80,7 +96,7 @@ p {
 
 .hide-on-large {
     @media only screen and (min-width: 64.0625rem) {
-        display: none;;
+        display: none;
     }
 }
 
