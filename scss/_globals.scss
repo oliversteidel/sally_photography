@@ -30,10 +30,6 @@ a:visited,
 a:link,
 a:active {
     text-decoration: none;
-}
-
-li {
-    list-style: none;
     font-family: "Playfair Display", serif;
     color: $primary-color;
 }
@@ -63,7 +59,7 @@ p {
 
 .cta {
     width: 190px;
-    height: 50px;    
+    height: 50px;
     margin-bottom: 2rem;
     font-size: 1rem;
     color: $primary-color;

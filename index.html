@@ -48,16 +48,40 @@
             <!-- ##### START NAV ##### -->
 
             <nav class="nav flex ai-c jc-c">
-                <ul class="nav__wrapper flex-col">
-                    <li class="nav__link nav__link--home">Home</li>
-                    <li class="nav__link nav__link--weddings">Weddings</li>
-                    <li class="nav__link nav__link--portraits">Portraits</li>
-                    <li class="nav__link nav__link--lifestyle">Lifestyle</li>
-                    <li class="nav__link nav__link--events">Events</li>
-                    <li class="nav__link nav__link--about">About</li>
-                    <li class="nav__link nav__link--gallery">Gallery</li>
-                    <li class="nav__link nav__link--contact">Contact</li>
-                </ul>
+                <div class="nav__wrapper flex-col">
+                    <div class="nav__link-wrapper">
+                        <a href="#hero" class="nav__link nav__link--hero link-up">Home</a>
+                        <div class="bottom">Home</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#weddings" class="nav__link nav__link--weddings link-up">Weddings</a>
+                        <div class="bottom">Weddings</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#portraits" class="nav__link nav__link--portraits link-up">Portraits</a>
+                        <div class="bottom">Portraits</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#lifestyle" class="nav__link nav__link--lifestyle link-up">Lifestyle</a>
+                        <div class="bottom">Lifestyle</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#events" class="nav__link nav__link--events link-up">Events</a>
+                        <div class="bottom">Events</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#about" class="nav__link nav__link--about link-up">About</a>
+                        <div class="bottom">About</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#gallery" class="nav__link nav__link--gallery link-up">Gallery</a>
+                        <div class="bottom">Gallery</div>
+                    </div>
+                    <div class="nav__link-wrapper">
+                        <a href="#contact" class="nav__link nav__link--contact link-up">Contact</a>
+                        <div class="bottom">Contact</div>
+                    </div>
+                </div>
             </nav>
 
             <!-- ##### END NAV ##### -->
@@ -68,7 +92,7 @@
             <!-- ##### START HERO ##### -->
 
 
-            <section class="hero flex-col ai-c">
+            <section class="hero flex-col ai-c" id="hero">
                 <h1 class="hero__headline">Momente gehen,<br> Bilder bleiben</h1>
                 <div class="hero__slider flex jc-c">
                     <img src="images/slider/slider-img1.jpeg" alt="" class="slider__img img1 pos1">
@@ -84,7 +108,7 @@
 
             <!-- ##### START SECTION WEDDINGS ##### -->
 
-            <section class="weddings flex-col ai-c">
+            <section class="weddings flex-col ai-c" id="weddings">
                 <h2 class="weddings__headline headline--section">Weddings</h2>
                 <div class="weddings__img-container">
 
@@ -139,7 +163,7 @@
 
             <!-- ##### START SECTION PORTRAITS ##### -->
 
-            <section class="portraits flex-col ai-c">
+            <section class="portraits flex-col ai-c" id="portraits">
                 <h2 class="portraits__headline headline--section">Portraits</h2>
                 <p class="text portraits__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
                     facilis eveniet voluptate magnam fugiat? Laboriosam vero nobis maiores voluptatum aspernatur?
@@ -160,7 +184,7 @@
 
             <!-- ##### START SECTION LIFESTYLE ##### -->
 
-            <section class="lifestyle flex-col ai-c">
+            <section class="lifestyle flex-col ai-c" id="lifestyle">
                 <h2 class="lifestyle__headline headline--section">Lifestyle</h2>
                 <p class="text lifestyle__text">Ihr braucht hochwertige Fotos für Euren Blog?
                     Eure Follower sehnen sich nach neuen, einzigartigen Bildern?
@@ -183,7 +207,7 @@
 
             <!-- ##### START SECTION EVENTS ##### -->
 
-            <section class="events flex-col ai-c">
+            <section class="events flex-col ai-c" id="events">
                 <h2 class="events__headline headline--section">Events</h2>
                 <p class="text events__text">Ob Firmenevent, Familienfeier oder Klassentreffen, mit den richtigen Fotos
                     bleibt Euer Event unvergesslich.
@@ -203,7 +227,7 @@
 
             <!-- ##### START SECTION ABOUT ##### -->
 
-            <section class="about flex-col ai-c">
+            <section class="about flex-col ai-c" id="about">
                 <h2 class="about__headline headline--section">About</h2>
                 <p class="text about__text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis, officiis et placeat
@@ -225,7 +249,7 @@
 
             <!-- ##### START SECTION GALLERY ##### -->
 
-            <section class="gallery">
+            <section class="gallery" id="gallery">
                 <h2 class="gallery__headline headline--section">Gallery</h2>
                 <div class="gallery__grid-container">
                     <div class="gallery__img-wrapper gallery__img-wrapper1">
@@ -329,13 +353,13 @@
                     </div>
                 </div>
             </section>
-            
+
         </main>
     </div>
     <div class="modal closed">
         <div class="modal__btn--close"></div>
-        <div class="modal__img-wrapper flex ai-c jc-c">
-            
+        <div class="modal__img-wrapper flex ai-c">
+
         </div>
     </div>
 
@@ -344,6 +368,7 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/intersectionObserver.js"></script>
 </body>
 
 </html>
