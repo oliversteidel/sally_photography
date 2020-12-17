@@ -404,7 +404,9 @@ section {
 
 .lifestyle__img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3); }
 
@@ -452,7 +454,9 @@ section {
 
 .events__img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3); }
 
@@ -515,8 +519,9 @@ section {
 
 .gallery__img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transition: -webkit-transform 0.8s ease-in;
   transition: -webkit-transform 0.8s ease-in;
   transition: transform 0.8s ease-in;
