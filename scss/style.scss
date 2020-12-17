@@ -173,6 +173,7 @@ section {
         position: absolute;
         height: 100%;
         width: auto;
+        transition: transform 1s ease-in-out, opacity 1s ease-in, filter 1s ease-out ;
     }
 
     .pos1 {

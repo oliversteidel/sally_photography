@@ -53,7 +53,14 @@ p {
   font-size: 1rem;
   color: #a26952;
   background: white;
-  border: 1px solid #a26952; }
+  border: 1px solid #a26952;
+  cursor: pointer;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in; }
+
+.cta:hover {
+  background-color: #a26952;
+  color: white; }
 
 .flex {
   display: -webkit-box;
@@ -248,7 +255,11 @@ section {
   .hero .slider__img {
     position: absolute;
     height: 100%;
-    width: auto; }
+    width: auto;
+    -webkit-transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out, -webkit-filter 1s ease-out;
+    transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out, -webkit-filter 1s ease-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in, filter 1s ease-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in, filter 1s ease-out, -webkit-transform 1s ease-in-out, -webkit-filter 1s ease-out; }
   .hero .pos1 {
     -webkit-transform: translateZ(-250px) translateX(calc(45vh / 1.7)) rotateY(0.25turn);
             transform: translateZ(-250px) translateX(calc(45vh / 1.7)) rotateY(0.25turn);

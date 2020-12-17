@@ -65,6 +65,13 @@ p {
     color: $primary-color;
     background: $bg-color;
     border: 1px solid $primary-color;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
+
+.cta:hover {
+    background-color: $primary-color;
+    color: $bg-color;
 }
 
 // helper classes
