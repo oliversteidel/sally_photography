@@ -1,5 +1,34 @@
 $(document).ready(function () {
 
+    //nav visibility animation on mobile
+    var navOpen = false;
+
+    const burgerOpen = () => {
+        $('.burger-menu__line--middle').css('opacity', '0');
+        $('.burger-menu__line--top').css('transform', 'translateY(10px) rotate(45deg)');
+        $('.burger-menu__line--bottom').css('transform', 'translateY(-10px) rotate(-45deg');
+    }
+
+    const burgerClose = () => {
+        $('.burger-menu__line--middle').css('opacity', '1');
+        $('.burger-menu__line--top').css('transform', 'rotate(0)');
+        $('.burger-menu__line--bottom').css('transform', 'rotate(0');
+    }
+
+    $('.burger-menu').click(() => {
+        if (!navOpen) {
+            burgerOpen();
+            $('.nav-container').css('transform', 'translateY(0)');
+            $('.nav').css('transform', 'translateY(0)');
+            navOpen = true;
+        }else{
+            $('.nav-container').css('transform', 'translateY(-100%)');
+            $('.nav').css('transform', 'translateY(-100%)');
+            burgerClose();
+            navOpen = false;
+        }
+    });
+
 
     //animation of nav__links
     var turn = false;
@@ -49,9 +78,9 @@ $(document).ready(function () {
         runSlider();
         if (turnCounter < 5) {
             turnCounter++;
-          } else {
+        } else {
             turnCounter = 1;
-          }
+        }
     }, 4000);
 
 
