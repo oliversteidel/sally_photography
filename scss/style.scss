@@ -42,23 +42,28 @@
 
 .burger-menu {
     position: fixed;
-    top: 4.5rem;
+    bottom: 4.5rem;
     right: 3.125rem;
-    width: 3.125rem;
-    height: 3.125rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: $primary-color;
     z-index: 101;
     cursor: pointer;
+    
 
     &__line {
         width: 80%;
         height: 2px;
-        background: $primary-color;
-        margin-bottom: 8px;
+        background: $bg-color;
+        
         transition: all .5s ease-out;
     }
 
     &__line--middle {
-        width: 100%;
+        width: 70%;
+        margin-top: 8px;
+        margin-bottom: 8px;
     }
 }
 
@@ -70,25 +75,29 @@
 .nav-container {
     z-index: 100;
     position: fixed;    
-    width: 100vw;
-    height: 100vh;
-    transform: translateY(-100%);
-    transition: transform .7s ease-in;
+    bottom: 4.5rem;
+    right: 3.25rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: $bg-color;
+    overflow: hidden;
+     
+    transition: width .5s ease-in, height .5s ease-in;  
 
     @media only screen and (min-width: 64.0625rem) {
-        width: 50vw;
-        transform: translateY(0);
+        width: 50vw !important;
+        height: 100vh !important;
+        z-index: 0;
+        bottom: unset;
+        right: unset;
+        border-radius: unset;
+               
     }
 }
 
 .nav {
-    z-index: 100;    
-    transform: translateY(-100%);
-    transition: transform .7s ease-in;
-
-    @media only screen and (min-width: 64.0625rem) {
-        transform: translateY(0);
-    }
+    z-index: 100;       
 
     &__wrapper {
         background: rgba(255, 255, 255, 0.9);
@@ -726,7 +735,7 @@ section {
     }
 
     .acr {
-        width: 100%;
+        width: 80%;
         height: auto;
         margin: 0 auto;
     }

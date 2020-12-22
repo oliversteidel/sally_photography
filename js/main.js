@@ -7,23 +7,27 @@ $(document).ready(function () {
         $('.burger-menu__line--middle').css('opacity', '0');
         $('.burger-menu__line--top').css('transform', 'translateY(10px) rotate(45deg)');
         $('.burger-menu__line--bottom').css('transform', 'translateY(-10px) rotate(-45deg');
+        
     }
 
     const burgerClose = () => {
         $('.burger-menu__line--middle').css('opacity', '1');
         $('.burger-menu__line--top').css('transform', 'rotate(0)');
         $('.burger-menu__line--bottom').css('transform', 'rotate(0');
+        
     }
 
     $('.burger-menu').click(() => {
         if (!navOpen) {
             burgerOpen();
-            $('.nav-container').css('transform', 'translateY(0)');
-            $('.nav').css('transform', 'translateY(0)');
+            
+            $('.nav-container').css('width', '100%');
+            $('.nav-container').css('height', '100%');            
             navOpen = true;
         }else{
-            $('.nav-container').css('transform', 'translateY(-100%)');
-            $('.nav').css('transform', 'translateY(-100%)');
+            $('.nav-container').css('width', '3.125rem');
+            $('.nav-container').css('height', '3.125rem');
+                        
             burgerClose();
             navOpen = false;
         }

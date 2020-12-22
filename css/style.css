@@ -133,21 +133,24 @@ p {
 
 .burger-menu {
   position: fixed;
-  top: 4.5rem;
+  bottom: 4.5rem;
   right: 3.125rem;
-  width: 3.125rem;
-  height: 3.125rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: #a26952;
   z-index: 101;
   cursor: pointer; }
   .burger-menu__line {
     width: 80%;
     height: 2px;
-    background: #a26952;
-    margin-bottom: 8px;
+    background: white;
     -webkit-transition: all .5s ease-out;
     transition: all .5s ease-out; }
   .burger-menu__line--middle {
-    width: 100%; }
+    width: 70%;
+    margin-top: 8px;
+    margin-bottom: 8px; }
 
 .container {
   width: 100vw;
@@ -157,32 +160,26 @@ p {
 .nav-container {
   z-index: 100;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: -webkit-transform .7s ease-in;
-  transition: -webkit-transform .7s ease-in;
-  transition: transform .7s ease-in;
-  transition: transform .7s ease-in, -webkit-transform .7s ease-in; }
+  bottom: 4.5rem;
+  right: 3.25rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: white;
+  overflow: hidden;
+  -webkit-transition: width .5s ease-in, height .5s ease-in;
+  transition: width .5s ease-in, height .5s ease-in; }
   @media only screen and (min-width: 64.0625rem) {
     .nav-container {
-      width: 50vw;
-      -webkit-transform: translateY(0);
-              transform: translateY(0); } }
+      width: 50vw !important;
+      height: 100vh !important;
+      z-index: 0;
+      bottom: unset;
+      right: unset;
+      border-radius: unset; } }
 
 .nav {
-  z-index: 100;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: -webkit-transform .7s ease-in;
-  transition: -webkit-transform .7s ease-in;
-  transition: transform .7s ease-in;
-  transition: transform .7s ease-in, -webkit-transform .7s ease-in; }
-  @media only screen and (min-width: 64.0625rem) {
-    .nav {
-      -webkit-transform: translateY(0);
-              transform: translateY(0); } }
+  z-index: 100; }
   .nav__wrapper {
     background: rgba(255, 255, 255, 0.9);
     padding: 1em;
@@ -703,7 +700,7 @@ section {
     width: auto;
     margin: 0 auto; }
   .modal .acr {
-    width: 100%;
+    width: 80%;
     height: auto;
     margin: 0 auto; }
 
