@@ -27,6 +27,7 @@ $(document).ready(function () {
                 rotateLink(entry.target.classList[0]);
 
                 //start slider if #hero is visible
+                //jenky slider animation (überspringt bild)
                 if(entry.target.classList[0] === "hero") {
                     console.log("hero in");
                     var interval = setInterval(() => {
