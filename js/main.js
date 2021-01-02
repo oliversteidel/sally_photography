@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+/*
     //Interssecction Observer
 
     const rotateLink = (id) => {
@@ -56,7 +56,7 @@ $(document).ready(function () {
     sections.forEach(section => {
         observer.observe(section);
     })
-
+*/
     //nav visibility animation on mobile
     var navOpen = false;
 

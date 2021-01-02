@@ -10,29 +10,28 @@ $(document).ready(function () {
         $('.nav__link--' + id).siblings().removeClass('bottom-down');
     }
 
-    const sections = document.querySelectorAll('section');
+    
 
-    const options = {
-        threshold: 0.4
-    };
+    const threshold = 0.5;
 
-    const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(entry => {
+    document.querySelectorAll('section').forEach(el => {
+        const elHeight = el.getBoundingClientRect().height;
+        var th = threshold;
 
-            if (entry.isIntersecting) {
-                rotateLink(entry.target.classList[0]);
-            } else {
-                backToDefault(entry.target.classList[0]);
+        // if element is too tall to ever hit the threshold - change threshold
+
+        if (elHeight > (window.innerHeight * threshold)) {
+            th = ((window.innerHeight * threshold) / elHeight) * threshold;
+        }
+
+        new IntersectionObserver(iEls => iEls.forEach(iEl => {
+            if (iEl.isIntersecting) {
+                rotateLink(iEl.target.classList[0]);
+            }else {
+                backToDefault(iEl.target.classList[0]);
             }
-        })
-    }, options);
-
-    sections.forEach(section => {
-        observer.observe(section);
+        }), {threshold: th}).observe(el);
     })
 
-
-
-
-
+    
 });
