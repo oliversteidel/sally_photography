@@ -1,62 +1,5 @@
 $(document).ready(function () {
-/*
-    //Interssecction Observer
 
-    const rotateLink = (id) => {
-        $('.nav__link--' + id).removeClass('link-up');
-        $('.nav__link--' + id).siblings().addClass('bottom-down');
-    }
-
-    const backToDefault = (id) => {
-        $('.nav__link--' + id).addClass('link-up');
-        $('.nav__link--' + id).siblings().removeClass('bottom-down');
-    }
-
-    const sections = document.querySelectorAll('section');
-
-    const options = {
-        threshold: 0.4
-    };
-
-    const observer = new IntersectionObserver(function (entries, observer) {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                console.log(entry.target);
-
-                rotateLink(entry.target.classList[0]);
-
-                //start slider if #hero is visible
-                //jenky slider animation (überspringt bild)
-                if(entry.target.classList[0] === "hero") {
-                    console.log("hero in");
-                    var interval = setInterval(() => {
-                        runSlider();
-                        if (turnCounter < 5) {
-                            turnCounter++;
-                        } else {
-                            turnCounter = 1;
-                        }
-                    }, 4000);
-
-                }
-                
-            } else {
-                backToDefault(entry.target.classList[0]);
-                if(entry.target.classList[0] === "hero") {
-                    console.log("hero out");
-                    clearInterval(interval);
-                }
-            }
-        })
-    }, options);
-
-    
-
-    sections.forEach(section => {
-        observer.observe(section);
-    })
-*/
     //nav visibility animation on mobile
     var navOpen = false;
 
@@ -74,15 +17,11 @@ $(document).ready(function () {
 
     $('.burger-menu').click(() => {
         if (!navOpen) {
-            burgerOpen();
-            
-            $('.nav-container').css('width', '100%');
-            $('.nav-container').css('height', '100%');            
+            burgerOpen();            
+            gsap.to(".nav-container", {duration: 0.75, ease: "expo.out", x: 0});                       
             navOpen = true;
         }else{
-            $('.nav-container').css('width', '3.125rem');
-            $('.nav-container').css('height', '3.125rem');
-                        
+            gsap.to(".nav-container", {duration: 0.75, ease: "expo.out", x: '-100%'});                       
             burgerClose();
             navOpen = false;
         }

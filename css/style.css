@@ -160,23 +160,22 @@ p {
 .nav-container {
   z-index: 100;
   position: fixed;
-  bottom: 4.5rem;
-  right: 3.25rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
+  top: 7.5rem;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 7.5rem);
   background: white;
-  overflow: hidden;
-  -webkit-transition: width 0.5s ease-in, height 0.5s ease-in;
-  transition: width 0.5s ease-in, height 0.5s ease-in; }
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); }
   @media only screen and (min-width: 64.0625rem) {
     .nav-container {
       width: 50vw !important;
       height: 100vh !important;
       z-index: 0;
-      bottom: unset;
-      right: unset;
-      border-radius: unset; } }
+      top: unset;
+      left: unset;
+      -webkit-transform: unset !important;
+              transform: unset !important; } }
 
 .nav {
   z-index: 100; }
@@ -248,7 +247,6 @@ section {
   height: 100vh;
   margin-bottom: 3rem; }
   .hero__headline {
-    margin-top: 9rem;
     text-align: center;
     font-size: clamp(2rem, 5vw, 3rem); }
   .hero__slider {
@@ -264,6 +262,7 @@ section {
     position: absolute;
     height: 100%;
     width: auto;
+    margin: 0 auto;
     -webkit-transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out;
     transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out;
     transition: transform 1s ease-in-out, opacity 1s ease-in;
@@ -369,8 +368,11 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 0.75rem;
   margin-bottom: 3rem; }
+  @media only screen and (min-width: 64.0625rem) {
+    .portraits__img-container {
+      gap: 1.25rem; } }
 
 .portraits__img {
   width: 100%;
@@ -401,8 +403,11 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 0.75rem;
   margin-bottom: 3rem; }
+  @media only screen and (min-width: 64.0625rem) {
+    .lifestyle__img-container {
+      gap: 1.25rem; } }
 
 .lifestyle__img {
   width: 100%;
@@ -446,48 +451,6 @@ section {
   grid-column: 3/4;
   grid-row: 4/5; }
 
-.events__headline {
-  margin-bottom: 3rem; }
-
-.events__img-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.25rem;
-  margin-bottom: 3rem; }
-
-.events__img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3); }
-
-.events__img1 {
-  grid-column: 1/2;
-  grid-row: 1/2; }
-
-.events__img2 {
-  grid-column: 2/4;
-  grid-row: 1/2; }
-
-.events__img3 {
-  grid-column: 4/5;
-  grid-row: 1/2; }
-
-.events__img4 {
-  grid-column: 1/2;
-  grid-row: 2/3; }
-
-.events__img5 {
-  grid-column: 2/4;
-  grid-row: 2/3; }
-
-.events__img6 {
-  grid-column: 4/5;
-  grid-row: 2/3; }
-
 .about__headline {
   margin-bottom: 3rem; }
 
@@ -512,7 +475,10 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  gap: 1.25rem; }
+  gap: 0.75rem; }
+  @media only screen and (min-width: 64.0625rem) {
+    .gallery__grid-container {
+      gap: 1.25rem; } }
 
 .gallery__img-wrapper {
   width: 100%;
@@ -668,8 +634,8 @@ section {
     width: 3.125rem;
     height: 3.125rem;
     position: relative;
-    margin-left: 90vw;
-    margin-top: 1%;
+    margin-left: 85%;
+    margin-top: 4%;
     cursor: pointer; }
   .modal__btn--close::before {
     content: "";
@@ -690,17 +656,21 @@ section {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg); }
   .modal__img-wrapper {
-    width: 100%;
-    height: 80vh;
-    padding: 0 10rem 0 10rem; }
+    width: 100%; }
   .modal .up {
-    height: 100%;
-    width: auto;
-    margin: 0 auto; }
+    width: 80vmin;
+    height: auto; }
+    @media only screen and (min-width: 64.0625rem) {
+      .modal .up {
+        width: 50vmin; } }
   .modal .acr {
-    width: 80%;
+    width: 90vmin;
     height: auto;
-    margin: 0 auto; }
+    margin-top: 20vh; }
+    @media only screen and (min-width: 64.0625rem) {
+      .modal .acr {
+        width: 100vmin;
+        margin-top: 0; } }
 
 .closed {
   display: none; }
