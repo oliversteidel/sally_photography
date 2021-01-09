@@ -102,6 +102,10 @@ $(document).ready(function () {
         }
     });
 
+    
+
+
+
     //slideranimation
     var turnCounter = 1;
     var removeCounter = 1;
@@ -133,14 +137,14 @@ $(document).ready(function () {
         }
     }
 
-    // setInterval(() => {
-    //     runSlider();
-    //     if (turnCounter < 5) {
-    //         turnCounter++;
-    //     } else {
-    //         turnCounter = 1;
-    //     }
-    // }, 4000);
+    setInterval(() => {
+        runSlider();
+        if (turnCounter < 5) {
+            turnCounter++;
+        } else {
+            turnCounter = 1;
+        }
+    }, 4000);
 
     // show selected gallery-image in modal
     const modal = $('.modal'),

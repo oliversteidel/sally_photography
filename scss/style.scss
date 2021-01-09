@@ -50,14 +50,13 @@
     background: $primary-color;
     z-index: 101;
     cursor: pointer;
-    
 
     &__line {
         width: 80%;
         height: 2px;
         background: $bg-color;
-        
-        transition: all .5s ease-out;
+
+        transition: all 0.5s ease-out;
     }
 
     &__line--middle {
@@ -74,7 +73,7 @@
 
 .nav-container {
     z-index: 100;
-    position: fixed;    
+    position: fixed;
     bottom: 4.5rem;
     right: 3.25rem;
     width: 1rem;
@@ -82,8 +81,8 @@
     border-radius: 50%;
     background: $bg-color;
     overflow: hidden;
-     
-    transition: width .5s ease-in, height .5s ease-in;  
+
+    transition: width 0.5s ease-in, height 0.5s ease-in;
 
     @media only screen and (min-width: 64.0625rem) {
         width: 50vw !important;
@@ -92,12 +91,11 @@
         bottom: unset;
         right: unset;
         border-radius: unset;
-               
     }
 }
 
 .nav {
-    z-index: 100;       
+    z-index: 100;
 
     &__wrapper {
         background: rgba(255, 255, 255, 0.9);
@@ -185,38 +183,35 @@ section {
         position: absolute;
         height: 100%;
         width: auto;
-        transition: transform 1s ease-in-out, opacity 1s ease-in, filter 1s ease-out ;
+        transition: transform 1s ease-in-out, opacity 1s ease-in;
     }
 
     .pos1 {
-        transform: translateZ(-250px) translateX(calc(45vh / 1.7)) rotateY(0.25turn);
-        z-index: -1;
+        transform: scale(0.3) translateX(26vh) rotateY(90deg);
         opacity: 0;
+        box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
     }
 
     .pos2 {
-        transform: translateZ(-150px) translateX(calc(45vh / 1.7)) rotateY(0.15turn);
-        opacity: 0.7;        
+        transform: scale(0.7) translateX(26vh) rotateY(54deg);
+        opacity: 0.7;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
-        z-index: 1;
     }
 
     .pos3 {
-        transform: translateZ(0);
-        z-index: 2;
-        box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
     }
 
     .pos4 {
-        transform: translateZ(-150px) translateX(calc(-45vh / 1.7)) rotateY(-0.15turn);
-        opacity: 0.7;        
+        transform: scale(0.7) translateX(-26vh) rotateY(-54deg);
+        opacity: 0.7;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
     }
 
     .pos5 {
-        transform: translateZ(-250px) translateX(calc(-45vh / 1.7)) rotateY(-0.25turn);
-        z-index: -1;
+        transform: scale(0.3) translateX(-26vh) rotateY(-90deg);
         opacity: 0;
+        box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -364,12 +359,10 @@ section {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        
     }
 
     &__img-wrapper {
         box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
-
     }
 
     &__img-wrapper1 {
@@ -520,7 +513,7 @@ section {
     &__img {
         width: 100%;
         height: 100%;
-        object-fit: cover;        
+        object-fit: cover;
         transition: transform 0.8s ease-in;
         cursor: pointer;
     }
