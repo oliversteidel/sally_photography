@@ -52,7 +52,7 @@
     cursor: pointer;
 
     &__line {
-        width: 80%;
+        width: 70%;
         height: 2px;
         background: $bg-color;
 
@@ -60,7 +60,7 @@
     }
 
     &__line--middle {
-        width: 70%;
+        width: 80%;
         margin-top: 8px;
         margin-bottom: 8px;
     }
@@ -110,7 +110,7 @@
     }
 
     &__link {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-size: clamp(2rem, 5vw, 3.5rem);
         line-height: 1.5em;
         backface-visibility: hidden;
         display: block;
@@ -125,7 +125,7 @@
 
     .bottom {
         position: absolute;
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-size: clamp(2rem, 5vw, 3.5rem);
         color: $primary-color;
         opacity: 0.5;
         backface-visibility: hidden;
@@ -164,7 +164,7 @@ section {
     margin-bottom: 3rem;
 
     &__headline {
-        //margin-top: 9rem;
+        margin-top: 2rem;
         text-align: center;
         font-size: clamp(2rem, 5vw, 3rem);
     }
@@ -191,12 +191,14 @@ section {
         transform: scale(0.3) translateX(26vh) rotateY(90deg);
         opacity: 0;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
+        z-index: -2;
     }
 
     .pos2 {
         transform: scale(0.7) translateX(26vh) rotateY(54deg);
         opacity: 0.7;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
 
     .pos3 {
@@ -207,12 +209,14 @@ section {
         transform: scale(0.7) translateX(-26vh) rotateY(-54deg);
         opacity: 0.7;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
 
     .pos5 {
         transform: scale(0.3) translateX(-26vh) rotateY(-90deg);
         opacity: 0;
         box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.5);
+        z-index: -2;
     }
 }
 
@@ -734,6 +738,12 @@ section {
         width: 100%;
         
         
+    }
+
+    &__btn--prev, &__btn--next {
+        width: 50px;
+        height: 50px;
+        border: 1px solid white;
     }
 
     .up {
