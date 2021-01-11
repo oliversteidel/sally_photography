@@ -184,7 +184,7 @@ section {
         height: 100%;
         width: auto;
         margin: 0 auto;
-        transition: transform 1s ease-in-out, opacity 1s ease-in;
+        transition: transform 1.3s cubic-bezier(.42,-0.63,.33,1.04), opacity 1s ease-in;
     }
 
     .pos1 {

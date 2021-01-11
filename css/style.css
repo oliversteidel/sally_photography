@@ -264,10 +264,10 @@ section {
     height: 100%;
     width: auto;
     margin: 0 auto;
-    -webkit-transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out;
-    transition: opacity 1s ease-in, -webkit-transform 1s ease-in-out;
-    transition: transform 1s ease-in-out, opacity 1s ease-in;
-    transition: transform 1s ease-in-out, opacity 1s ease-in, -webkit-transform 1s ease-in-out; }
+    -webkit-transition: opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04);
+    transition: opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04);
+    transition: transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04), opacity 1s ease-in;
+    transition: transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04), opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04); }
   .hero .pos1 {
     -webkit-transform: scale(0.3) translateX(26vh) rotateY(90deg);
             transform: scale(0.3) translateX(26vh) rotateY(90deg);
