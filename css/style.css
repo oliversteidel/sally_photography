@@ -264,10 +264,10 @@ section {
     height: 100%;
     width: auto;
     margin: 0 auto;
-    -webkit-transition: opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04);
-    transition: opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04);
-    transition: transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04), opacity 1s ease-in;
-    transition: transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04), opacity 1s ease-in, -webkit-transform 1.3s cubic-bezier(0.42, -0.63, 0.33, 1.04); }
+    -webkit-transition: opacity 1s ease-in, -webkit-transform 1.5s cubic-bezier(0.45, 0.04, 0.42, 1);
+    transition: opacity 1s ease-in, -webkit-transform 1.5s cubic-bezier(0.45, 0.04, 0.42, 1);
+    transition: transform 1.5s cubic-bezier(0.45, 0.04, 0.42, 1), opacity 1s ease-in;
+    transition: transform 1.5s cubic-bezier(0.45, 0.04, 0.42, 1), opacity 1s ease-in, -webkit-transform 1.5s cubic-bezier(0.45, 0.04, 0.42, 1); }
   .hero .pos1 {
     -webkit-transform: scale(0.3) translateX(26vh) rotateY(90deg);
             transform: scale(0.3) translateX(26vh) rotateY(90deg);
@@ -662,10 +662,28 @@ section {
             transform: rotate(-45deg); }
   .modal__img-wrapper {
     width: 100%; }
+  .modal__btn-container {
+    position: absolute;
+    bottom: 50px;
+    left: 50vw;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%); }
   .modal__btn--prev, .modal__btn--next {
     width: 50px;
     height: 50px;
-    border: 1px solid white; }
+    color: white;
+    font-size: 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 3rem;
+    cursor: pointer; }
   .modal .up {
     width: 80vmin;
     height: auto; }
