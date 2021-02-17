@@ -363,7 +363,9 @@ section {
   width: 100%;
   height: auto;
   -webkit-box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3); }
+          box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
+  -ms-flex-item-align: center;
+      align-self: center; }
 
 .portraits__headline {
   margin-bottom: 3rem; }
