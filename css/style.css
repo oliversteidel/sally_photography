@@ -17,7 +17,9 @@ html {
 
 body {
   height: 100%;
-  width: 100vw; }
+  width: 100vw;
+  max-width: 160rem;
+  margin: 0 auto; }
 
 a,
 a:visited,
@@ -303,10 +305,16 @@ section {
 
 .weddings__headline {
   margin-bottom: 7rem; }
+  @media only screen and (min-width: 120.0625rem) {
+    .weddings__headline {
+      margin-bottom: 10rem; } }
 
 .weddings__img-container {
   width: 100%;
   margin-bottom: 5rem; }
+  @media only screen and (min-width: 120.0625rem) {
+    .weddings__img-container {
+      margin-bottom: 7rem; } }
 
 .weddings .upright {
   position: relative;
@@ -357,8 +365,7 @@ section {
   z-index: 1; }
 
 .weddings__text {
-  margin: 3rem 0 3rem 0;
-  text-align: justify; }
+  margin: 3rem 0 3rem 0; }
 
 .weddings__img--full {
   width: 100%;
@@ -376,46 +383,51 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 0.75rem; }
+  gap: 0.75rem;
+  margin-bottom: 3rem; }
   @media only screen and (min-width: 64.0625rem) {
     .portraits__img-container {
       gap: 1.25rem; } }
 
-.portraits__img {
-  width: 100%;
-  height: auto;
+.portraits__img-wrapper {
   -webkit-box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3); }
 
-.portraits__img1 {
+.portraits__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
+.portraits__img-wrapper1 {
   grid-column: 1/2;
   grid-row: 1/2; }
 
-.portraits__img2 {
+.portraits__img-wrapper2 {
   grid-column: 2/3;
   grid-row: 1/2; }
 
-.portraits__img3 {
+.portraits__img-wrapper3 {
   grid-column: 1/2;
   grid-row: 2/3; }
 
-.portraits__img4 {
+.portraits__img-wrapper4 {
   grid-column: 2/3;
   grid-row: 2/3; }
 
-.portraits__img5 {
+.portraits__img-wrapper5 {
   grid-column: 1/2;
   grid-row: 3/4; }
 
-.portraits__img6 {
+.portraits__img-wrapper6 {
   grid-column: 2/3;
   grid-row: 3/4; }
 
-.portraits__img7 {
+.portraits__img-wrapper7 {
   grid-column: 1/2;
   grid-row: 4/5; }
 
-.portraits__img8 {
+.portraits__img-wrapper8 {
   grid-column: 2/3;
   grid-row: 4/5; }
 
@@ -682,10 +694,13 @@ section {
     width: 100%; }
   .modal__btn-container {
     position: absolute;
-    bottom: 75px;
+    bottom: 7.5rem;
     left: 50vw;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%); }
+    @media only screen and (min-width: 64.0625rem) {
+      .modal__btn-container {
+        bottom: 4.6875rem; } }
   .modal__btn--prev, .modal__btn--next {
     width: 50px;
     height: 50px;
@@ -705,13 +720,17 @@ section {
       height: auto; }
   .modal .up {
     width: 80vmin;
-    height: auto; }
+    height: auto;
+    -ms-flex-item-align: center;
+        align-self: center; }
     @media only screen and (min-width: 64.0625rem) {
       .modal .up {
         width: 50vmin; } }
   .modal .acr {
     width: 90vmin;
     height: auto;
+    -ms-flex-item-align: center;
+        align-self: center;
     margin-top: 20vh; }
     @media only screen and (min-width: 64.0625rem) {
       .modal .acr {

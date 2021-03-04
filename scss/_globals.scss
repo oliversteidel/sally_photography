@@ -1,6 +1,11 @@
 $bg-color: white;
 $primary-color: #a26952;
 
+$medium: 64.0625rem;
+$large: 120.0625rem;
+
+$max-width: 160rem;
+
 html {
     font-size: 100%;
     box-sizing: border-box;
@@ -23,6 +28,8 @@ body {
     // overflow-x: hidden;
     height: 100%;
     width: 100vw;
+    max-width: $max-width;
+    margin: 0 auto;
 }
 
 a,
