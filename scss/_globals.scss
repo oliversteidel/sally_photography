@@ -115,3 +115,15 @@ p {
         display: none;
     }
 }
+
+// keyframes
+
+@keyframes fade-in-next {
+    from {transform: translateX(15rem); opacity: 0;}
+    to {transform: translateX(0); opacity: 1;}
+}
+
+@keyframes fade-in-prev {
+    from {transform: translateX(-15rem); opacity: 0;}
+    to {transform: translateX(0); opacity: 1;}
+}

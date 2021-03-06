@@ -100,11 +100,11 @@ $(document).ready(function () {
         galleryImgArr.push($('.gallery__img' + i).attr("src"));
     }
 
-    const nextImg = (num) => {
+    const nextImg = (num, animation) => {
         //gsap.to(".currentImg", { duration: 0.75, ease: "expo.out", x: -100, opacity: 0 });
         imgWrapper.empty();
         var img = galleryImgArr[num];
-        setImg(img, getImgRatio(img));
+        setImg(img, getImgRatio(img), animation);
     }
 
     const openModal = () => {
@@ -123,11 +123,11 @@ $(document).ready(function () {
         return isAcross.test(imgRatio);
     }
 
-    const setImg = (src, ratio) => {
+    const setImg = (src, ratio, animation) => {
         if (ratio) {
-            imgWrapper.append('<img src="' + src + '" class="acr currentImg">');
+            imgWrapper.append(`<img src="${src}" class="acr ${animation}">`);
         } else {
-            imgWrapper.append('<img src="' + src + '" class="up currentImg">');
+            imgWrapper.append(`<img src="${src}" class="up ${animation}">`);
         }
     }
 
@@ -145,15 +145,17 @@ $(document).ready(function () {
 
     $('.modal__btn--next').click(function () {
         if (imgPos < galleryImgArr.length) {
-            nextImg(imgPos);
             imgPos++;
+            nextImg(imgPos, "nextImg");
+            
         }
     });
 
     $('.modal__btn--prev').click(function () {
         if (imgPos > 1) {
-            nextImg(imgPos - 1);
             imgPos--;
+            nextImg(imgPos, "prevImg");
+            
         }
     });
 

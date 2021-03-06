@@ -766,6 +766,14 @@ section {
         width: 100%;
     }
 
+    .nextImg {
+        animation: fade-in-next 0.75s forwards cubic-bezier(.38,.1,.05,.9);
+    }
+
+    .prevImg {
+        animation: fade-in-prev 0.75s forwards cubic-bezier(.38,.1,.05,.9);
+    }
+
     &__btn-container {
         position: absolute;
         bottom: 7.5rem;
@@ -784,7 +792,9 @@ section {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0.4rem;
         margin: 0 3rem;
+        background:rgba(0, 0, 0, 0.3);
         cursor: pointer;
 
         img {
