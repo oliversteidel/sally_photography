@@ -89,14 +89,16 @@ $(document).ready(function () {
 
     // show selected gallery-image in modal
     const galleryImgArr = [];
-    var imgPos;
+    let imgPos;
+    let buttonsDisabled = false;
+
 
     const modal = $('.modal'),
         modalCloseBtn = $('.modal__btn--close'),
         imgWrapper = $('.modal__img-wrapper');
 
     //fill galleryImgArr with src-attr of each image in gallery    
-    for (let i = 1; i <= $('.gallery__img').length; i++) {
+    for (let i = 0; i <= $('.gallery__img').length - 1; i++) {
         galleryImgArr.push($('.gallery__img' + i).attr("src"));
     }
 
@@ -144,18 +146,31 @@ $(document).ready(function () {
     });
 
     $('.modal__btn--next').click(function () {
-        if (imgPos < galleryImgArr.length) {
+        if (imgPos < galleryImgArr.length - 1) {
             imgPos++;
             nextImg(imgPos, "nextImg");
-            
         }
     });
 
     $('.modal__btn--prev').click(function () {
-        if (imgPos > 1) {
+        if (imgPos >= 1) {
             imgPos--;
             nextImg(imgPos, "prevImg");
-            
+        }
+    });
+
+    // hide modal buttons on click
+    $('.modal__img-wrapper').click(() => {
+        if(!buttonsDisabled) {
+            modalCloseBtn.css('visibility', 'hidden');
+            $('.modal__btn--next').css('visibility', 'hidden');
+            $('.modal__btn--prev').css('visibility', 'hidden');
+            buttonsDisabled = true;
+        }else{
+            modalCloseBtn.css('visibility', 'visible');
+            $('.modal__btn--next').css('visibility', 'visible');
+            $('.modal__btn--prev').css('visibility', 'visible');
+            buttonsDisabled = false;
         }
     });
 

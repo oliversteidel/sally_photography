@@ -722,14 +722,44 @@ section {
 
 // ##### END SECTION GALLERY #####
 
+// ##### START FOOTER #####
+
+.footer {
+    &__headline {
+        margin-bottom: 2rem;
+    }
+
+    &__mail-link {
+        font-family: "Raleway", sans-serif !important;
+        font-size: 1.5rem;
+        color: $primary-color;
+        margin-bottom: 1rem;
+
+    }
+
+    &__links-container {
+        color: $primary-color;
+        font-size: 2rem;
+        margin-bottom: 2rem;        
+    }
+
+    .fa-facebook-square {
+        margin-left: 1em;
+    }
+}
+
+// ##### END FOOTER #####
+
 // ##### START MODAL #####
 
 .modal {
     width: 100vw;
-    height: 105vh;
+    //height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: -50px;
     background: rgba(0, 0, 0, 0.95);
     z-index: 1000;
 
@@ -739,7 +769,10 @@ section {
         position: relative;
         margin-left: 85%;
         margin-top: 4%;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
+        z-index: 100;
     }
 
     &__btn--close::before {
@@ -764,14 +797,18 @@ section {
 
     &__img-wrapper {
         width: 100%;
+
+        @media only screen and (orientation: landscape) {
+            transform: translateY(-3.125rem);
+        }
     }
 
     .nextImg {
-        animation: fade-in-next 0.75s forwards cubic-bezier(.38,.1,.05,.9);
+        animation: fade-in-next 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9);
     }
 
     .prevImg {
-        animation: fade-in-prev 0.75s forwards cubic-bezier(.38,.1,.05,.9);
+        animation: fade-in-prev 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9);
     }
 
     &__btn-container {
@@ -794,7 +831,8 @@ section {
         justify-content: center;
         padding: 0.4rem;
         margin: 0 3rem;
-        background:rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.2);
         cursor: pointer;
 
         img {
@@ -807,7 +845,13 @@ section {
         width: 80vmin;
         height: auto;
         align-self: center;
-        //margin: 50% auto;
+
+        @media only screen and (orientation: landscape) {
+            height: 90vh;
+            width: auto;
+            margin-top: 0;
+        }
+
         @media only screen and (min-width: $medium) {
             width: 50vmin;
         }
@@ -818,6 +862,13 @@ section {
         height: auto;
         align-self: center;
         margin-top: 20vh;
+
+        @media only screen and (orientation: landscape) {
+            height: 90vh;
+            width: auto;
+            margin-top: 0;
+        }
+
         @media only screen and (min-width: $medium) {
             width: 100vmin;
             margin-top: 0;

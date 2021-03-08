@@ -697,12 +697,30 @@ section {
   grid-column: 4/5;
   grid-row: 10/11; }
 
+.footer__headline {
+  margin-bottom: 2rem; }
+
+.footer__mail-link {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 1.5rem;
+  color: #a26952;
+  margin-bottom: 1rem; }
+
+.footer__links-container {
+  color: #a26952;
+  font-size: 2rem;
+  margin-bottom: 2rem; }
+
+.footer .fa-facebook-square {
+  margin-left: 1em; }
+
 .modal {
   width: 100vw;
-  height: 105vh;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: -50px;
   background: rgba(0, 0, 0, 0.95);
   z-index: 1000; }
   .modal__btn--close {
@@ -711,7 +729,10 @@ section {
     position: relative;
     margin-left: 85%;
     margin-top: 4%;
-    cursor: pointer; }
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 100; }
   .modal__btn--close::before {
     content: "";
     position: absolute;
@@ -732,6 +753,10 @@ section {
             transform: rotate(-45deg); }
   .modal__img-wrapper {
     width: 100%; }
+    @media only screen and (orientation: landscape) {
+      .modal__img-wrapper {
+        -webkit-transform: translateY(-3.125rem);
+                transform: translateY(-3.125rem); } }
   .modal .nextImg {
     -webkit-animation: fade-in-next 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9);
             animation: fade-in-next 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9); }
@@ -761,7 +786,8 @@ section {
             justify-content: center;
     padding: 0.4rem;
     margin: 0 3rem;
-    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
     cursor: pointer; }
     .modal__btn--prev img, .modal__btn--next img {
       width: 60%;
@@ -771,6 +797,11 @@ section {
     height: auto;
     -ms-flex-item-align: center;
         align-self: center; }
+    @media only screen and (orientation: landscape) {
+      .modal .up {
+        height: 90vh;
+        width: auto;
+        margin-top: 0; } }
     @media only screen and (min-width: 64.0625rem) {
       .modal .up {
         width: 50vmin; } }
@@ -780,6 +811,11 @@ section {
     -ms-flex-item-align: center;
         align-self: center;
     margin-top: 20vh; }
+    @media only screen and (orientation: landscape) {
+      .modal .acr {
+        height: 90vh;
+        width: auto;
+        margin-top: 0; } }
     @media only screen and (min-width: 64.0625rem) {
       .modal .acr {
         width: 100vmin;
