@@ -161,6 +161,9 @@ p {
   width: 6.25rem;
   height: auto;
   z-index: 1; }
+  @media only screen and (min-width: 64.0625rem) {
+    .logo__img {
+      width: 7.5rem; } }
 
 .contact-head {
   position: fixed;
@@ -697,23 +700,6 @@ section {
   grid-column: 4/5;
   grid-row: 10/11; }
 
-.footer__headline {
-  margin-bottom: 2rem; }
-
-.footer__mail-link {
-  font-family: "Raleway", sans-serif !important;
-  font-size: 1.5rem;
-  color: #a26952;
-  margin-bottom: 1rem; }
-
-.footer__links-container {
-  color: #a26952;
-  font-size: 2rem;
-  margin-bottom: 2rem; }
-
-.footer .fa-facebook-square {
-  margin-left: 1em; }
-
 .modal {
   width: 100vw;
   position: fixed;
@@ -802,9 +788,6 @@ section {
         height: 90vh;
         width: auto;
         margin-top: 0; } }
-    @media only screen and (min-width: 64.0625rem) {
-      .modal .up {
-        width: 50vmin; } }
   .modal .acr {
     width: 90vmin;
     height: auto;
@@ -816,10 +799,35 @@ section {
         height: 90vh;
         width: auto;
         margin-top: 0; } }
-    @media only screen and (min-width: 64.0625rem) {
-      .modal .acr {
-        width: 100vmin;
-        margin-top: 0; } }
 
 .closed {
   display: none; }
+
+.footer__headline {
+  margin-bottom: 2rem; }
+
+.footer__mail-link {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 1rem;
+  color: #a26952;
+  margin-bottom: 1rem; }
+  @media only screen and (min-width: 23.75rem) {
+    .footer__mail-link {
+      font-size: 1.25rem; } }
+  @media only screen and (min-width: 64.0625rem) {
+    .footer__mail-link {
+      font-size: 1.5rem; } }
+
+.footer__social-links-container {
+  color: #a26952;
+  font-size: 2rem;
+  margin-bottom: 2rem; }
+
+.footer .fa-facebook-square {
+  margin-left: 1em; }
+
+.footer__links-container {
+  margin-bottom: 2rem; }
+  .footer__links-container a {
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 0.5rem; }

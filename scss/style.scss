@@ -24,6 +24,10 @@
     width: 6.25rem;
     height: auto;
     z-index: 1;
+
+    @media only screen and (min-width: $medium) {
+        width: 7.5rem;
+    }
 }
 
 .contact-head {
@@ -722,33 +726,6 @@ section {
 
 // ##### END SECTION GALLERY #####
 
-// ##### START FOOTER #####
-
-.footer {
-    &__headline {
-        margin-bottom: 2rem;
-    }
-
-    &__mail-link {
-        font-family: "Raleway", sans-serif !important;
-        font-size: 1.5rem;
-        color: $primary-color;
-        margin-bottom: 1rem;
-
-    }
-
-    &__links-container {
-        color: $primary-color;
-        font-size: 2rem;
-        margin-bottom: 2rem;        
-    }
-
-    .fa-facebook-square {
-        margin-left: 1em;
-    }
-}
-
-// ##### END FOOTER #####
 
 // ##### START MODAL #####
 
@@ -852,9 +829,9 @@ section {
             margin-top: 0;
         }
 
-        @media only screen and (min-width: $medium) {
-            width: 50vmin;
-        }
+        // @media only screen and (min-width: $medium) {
+        //     width: 50vmin;
+        // }
     }
 
     .acr {
@@ -869,13 +846,60 @@ section {
             margin-top: 0;
         }
 
-        @media only screen and (min-width: $medium) {
-            width: 100vmin;
-            margin-top: 0;
-        }
+        // @media only screen and (min-width: $medium) {
+        //     width: 100vmin;
+        //     margin-top: 0;
+        // }
     }
 }
 
 .closed {
     display: none;
 }
+
+// ##### END MODAL #####
+
+// ##### START FOOTER #####
+
+.footer {
+    &__headline {
+        margin-bottom: 2rem;
+    }
+
+    &__mail-link {
+        font-family: "Raleway", sans-serif !important;
+        font-size: 1rem;
+        color: $primary-color;
+        margin-bottom: 1rem;
+
+        @media only screen and (min-width: $small) {
+            font-size: 1.25rem;
+        }
+
+        @media only screen and (min-width: $medium) {
+            font-size: 1.5rem;
+        }
+
+    }
+
+    &__social-links-container {
+        color: $primary-color;
+        font-size: 2rem;
+        margin-bottom: 2rem;        
+    }
+    
+    .fa-facebook-square {
+        margin-left: 1em;
+    }
+
+    &__links-container {
+        margin-bottom: 2rem;
+
+        a {
+            font-family: "Raleway", sans-serif;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+// ##### END FOOTER #####

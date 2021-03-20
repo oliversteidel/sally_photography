@@ -141,7 +141,7 @@ $(document).ready(function () {
         }
 
         var img = $(this).attr("src");
-        setImg(img, getImgRatio(img));
+        setImg(img, getImgRatio(img), "nextImg");
         openModal();
     });
 
