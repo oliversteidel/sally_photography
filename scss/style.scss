@@ -20,6 +20,10 @@
     background: $primary-color;
 }
 
+.logo-link {
+    z-index: 11;
+}
+
 .logo__img {
     width: 6.25rem;
     height: auto;
@@ -166,7 +170,7 @@ section {
     margin-bottom: 3rem;
 
     &__headline {
-        margin-top: 2rem;
+        margin-top: 3rem;
         text-align: center;
         font-size: clamp(2rem, 5vw, 3rem);
     }

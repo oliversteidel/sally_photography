@@ -178,4 +178,47 @@ $(document).ready(function () {
         closeModal();
         imgWrapper.empty();
     });
+
+    // modal swipe to change img
+    imgWrapper.on('swipeleft', function() {
+        if (imgPos < galleryImgArr.length - 1) {
+            imgPos++;
+            nextImg(imgPos, "nextImg");
+        }        
+        console.log('swipeleft');        
+    });
+
+    imgWrapper.on('swiperight', function() {
+        if (imgPos >= 1) {
+            imgPos--;
+            nextImg(imgPos, "prevImg");
+        }
+        console.log('swiperight');
+    });
+
+    // nav scroll to section
+
+    const scrollToSection = (element, navheight) => {
+        let offset = element.offset();
+        let offsetTop = offset.top;
+        let totalScoll = offsetTop - navheight;
+
+        $('body,html').animate({
+            scrollTop: totalScoll
+        }, 500);
+    }
+
+    $('.nav__link-wrapper').click(function() {
+        let el = $(this).children().first().attr('href');
+        console.log($(this).children().first());
+        let elWrapped = $(el);
+
+        scrollToSection(elWrapped, 100);
+
+        return true;
+    })
+
+
+
+    
 });
