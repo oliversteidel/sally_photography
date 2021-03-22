@@ -26,7 +26,7 @@ $(document).ready(function () {
             gsap.to(".nav-container", { duration: 0.75, ease: "expo.in", x: '-100%' });
             burgerClose();
             navOpen = false;
-        }
+        }        
     });
 
     //close nav when link is clicked
@@ -35,7 +35,7 @@ $(document).ready(function () {
             gsap.to(".nav-container", { duration: 0.75, ease: "expo.out", x: '-100%' });
             burgerClose();
             navOpen = false;
-        }
+        }        
     })
 
     // $('.nav__link-wrapper').mouseout(function() {
@@ -142,21 +142,21 @@ $(document).ready(function () {
 
         var img = $(this).attr("src");
         setImg(img, getImgRatio(img), "nextImg");
-        openModal();
+        openModal();       
     });
 
     $('.modal__btn--next').click(function () {
         if (imgPos < galleryImgArr.length - 1) {
             imgPos++;
             nextImg(imgPos, "nextImg");
-        }
+        }        
     });
 
     $('.modal__btn--prev').click(function () {
         if (imgPos >= 1) {
             imgPos--;
             nextImg(imgPos, "prevImg");
-        }
+        }        
     });
 
     // hide modal buttons on click
@@ -171,54 +171,11 @@ $(document).ready(function () {
             $('.modal__btn--next').css('visibility', 'visible');
             $('.modal__btn--prev').css('visibility', 'visible');
             buttonsDisabled = false;
-        }
+        }        
     });
 
     modalCloseBtn.click(() => {
         closeModal();
         imgWrapper.empty();
-    });
-
-    // modal swipe to change img
-    imgWrapper.on('swipeleft', function() {
-        if (imgPos < galleryImgArr.length - 1) {
-            imgPos++;
-            nextImg(imgPos, "nextImg");
-        }        
-        console.log('swipeleft');        
-    });
-
-    imgWrapper.on('swiperight', function() {
-        if (imgPos >= 1) {
-            imgPos--;
-            nextImg(imgPos, "prevImg");
-        }
-        console.log('swiperight');
-    });
-
-    // nav scroll to section
-
-    const scrollToSection = (element, navheight) => {
-        let offset = element.offset();
-        let offsetTop = offset.top;
-        let totalScoll = offsetTop - navheight;
-
-        $('body,html').animate({
-            scrollTop: totalScoll
-        }, 500);
-    }
-
-    $('.nav__link-wrapper').click(function() {
-        let el = $(this).children().first().attr('href');
-        console.log($(this).children().first());
-        let elWrapped = $(el);
-
-        scrollToSection(elWrapped, 100);
-
-        return true;
-    })
-
-
-
-    
+    });    
 });

@@ -25,8 +25,7 @@ $(document).ready(function () {
         }
 
         new IntersectionObserver(iEls => iEls.forEach(iEl => {
-            if (iEl.isIntersecting) {
-                console.log(iEl.target + "intersects now");
+            if (iEl.isIntersecting) {                
                 rotateLink(iEl.target.classList[0]);
             }else {
                 backToDefault(iEl.target.classList[0]);
