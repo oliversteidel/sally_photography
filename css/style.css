@@ -248,10 +248,10 @@ p {
     display: block;
     -webkit-transform-origin: center bottom;
             transform-origin: center bottom;
-    -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out;
-    transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-out;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out; }
+    -webkit-transition: opacity 0.25s ease-out, -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.25s ease-out, -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.25s ease-out;
+    transition: transform 0.5s ease-in-out, opacity 0.25s ease-out, -webkit-transform 0.5s ease-in-out; }
   .nav .link-up {
     -webkit-transform: translateY(-70%) rotateX(0.25turn);
             transform: translateY(-70%) rotateX(0.25turn);
