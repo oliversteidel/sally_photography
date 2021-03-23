@@ -91,6 +91,7 @@ $(document).ready(function () {
     const galleryImgArr = [];
     let imgPos;
     let buttonsDisabled = false;
+    let modalOpen = false;
 
 
     const modal = $('.modal'),
@@ -112,10 +113,12 @@ $(document).ready(function () {
     const openModal = () => {
         modal.removeClass('closed');
         modal.css('opacity', '1');
+        modalOpen = true;
     }
 
     const closeModal = () => {
         modal.addClass('closed');
+        modalOpen = false;
     }
 
     //every image has "acr" or "up" for across/upright set in filename
@@ -177,5 +180,39 @@ $(document).ready(function () {
     modalCloseBtn.click(() => {
         closeModal();
         imgWrapper.empty();
-    });    
+    });  
+
+    // swipe gallery images
+
+    let mouseStart = 0;
+    let mouseEnd = 0;
+    let mouseDirection = 0;
+    
+    $('body').mousedown(function (event) {
+        if(modalOpen) {
+            event.preventDefault();            
+            mouseStart = event.pageX;            
+        }        
+    });
+
+    $('body').mouseup(function (event) {
+        if(modalOpen) {
+            mouseEnd = event.pageX;            
+            mouseDirection = mouseStart - mouseEnd;                        
+
+            if(mouseDirection > 0 && mouseDirection > 50) {
+                if (imgPos < galleryImgArr.length - 1) {
+                    imgPos++;
+                    nextImg(imgPos, "nextImg");
+                }   
+            }else if(mouseDirection < 0 && mouseDirection < -50) {
+                if (imgPos >= 1) {
+                    imgPos--;
+                    nextImg(imgPos, "prevImg");
+                }  
+            }
+        }
+    });
+    
+    
 });
