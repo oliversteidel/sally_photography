@@ -128,11 +128,31 @@ $(document).ready(function () {
         return isAcross.test(imgRatio);
     }
 
-    const setImg = (src, ratio, animation) => {
-        if (ratio) {
+    const setImg = (src, ratioAcr, animation) => {
+        if (ratioAcr) {
             imgWrapper.append(`<img src="${src}" class="acr ${animation}">`);
         } else {
             imgWrapper.append(`<img src="${src}" class="up ${animation}">`);
+        }
+    }
+
+    //hide evrything underneath modal
+
+    const hideSide = (bool) => {
+        const logoContainer = $('.logo-container');
+        const contactHead = $('.contact-head');
+        const burgerMenu = $('.burger-menu');
+        const container = $('.container');
+
+        const content = [logoContainer, contactHead, burgerMenu, container];
+        if (bool) {
+            content.forEach(item => {
+                item.css('visibility', 'hidden');
+            });
+        } else {
+            content.forEach(item => {
+                item.css('visibility', 'visible');
+            });
         }
     }
 
@@ -146,6 +166,7 @@ $(document).ready(function () {
         var img = $(this).attr("src");
         setImg(img, getImgRatio(img), "nextImg");
         openModal();
+        hideSide(true);
     });
 
     $('.modal__btn--next').click(function () {
@@ -179,6 +200,7 @@ $(document).ready(function () {
 
     modalCloseBtn.click(() => {
         closeModal();
+        hideSide(false);
         imgWrapper.empty();
     });
 
@@ -235,8 +257,8 @@ $(document).ready(function () {
 
     $('.nav__link-wrapper').click(function (event) {
         event.preventDefault();
-        let target = $(this).children().first().attr('href');        
-        $('html,body').animate({            
+        let target = $(this).children().first().attr('href');
+        $('html,body').animate({
             scrollTop: $(target).offset().top - 100
         }, 500);
     });

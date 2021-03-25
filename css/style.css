@@ -58,12 +58,34 @@ p {
   background: white;
   border: 1px solid #a26952;
   cursor: pointer;
-  -webkit-transition: all .4s ease-in;
-  transition: all .4s ease-in; }
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in; }
+  .cta a {
+    font-family: inherit;
+    -webkit-transition: color 0.4s ease-in;
+    transition: color 0.4s ease-in; }
 
 .cta:hover {
-  background-color: #a26952;
+  background-color: #a26952; }
+
+.cta:hover a {
   color: white; }
+
+.social-link {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #a26952;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  cursor: pointer; }
+
+.social-link--fb {
+  -webkit-mask: url(../images/icon-facebook.svg);
+          mask: url(../images/icon-facebook.svg); }
+
+.social-link--insta {
+  -webkit-mask: url(../images/icon-instagram.svg);
+          mask: url(../images/icon-instagram.svg); }
 
 .flex {
   display: -webkit-box;
@@ -174,10 +196,7 @@ p {
   top: 1.25rem;
   right: 1.25rem;
   z-index: 11; }
-  .contact-head .far,
-  .contact-head .fab {
-    color: #a26952;
-    font-size: 1.5rem;
+  .contact-head a + a {
     margin-left: 1rem; }
 
 .burger-menu {
@@ -706,6 +725,7 @@ section {
 
 .modal {
   width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -826,9 +846,8 @@ section {
   color: #a26952;
   font-size: 2rem;
   margin-bottom: 2rem; }
-
-.footer .fa-facebook-square {
-  margin-left: 1em; }
+  .footer__social-links-container a + a {
+    margin-left: 1rem; }
 
 .footer__links-container {
   margin-bottom: 2rem; }

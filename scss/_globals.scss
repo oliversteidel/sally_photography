@@ -76,12 +76,36 @@ p {
     background: $bg-color;
     border: 1px solid $primary-color;
     cursor: pointer;
-    transition: all .4s ease-in;
+    transition: all 0.4s ease-in;
+
+    a {
+        font-family: inherit;
+        transition: color 0.4s ease-in;
+    }
 }
 
 .cta:hover {
     background-color: $primary-color;
+}
+
+.cta:hover a {
     color: $bg-color;
+}
+
+.social-link {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: $primary-color;
+    mask-size: cover;
+    cursor: pointer;
+}
+
+.social-link--fb {
+    mask: url(../images/icon-facebook.svg);
+}
+
+.social-link--insta {
+    mask: url(../images/icon-instagram.svg);
 }
 
 // helper classes
@@ -122,11 +146,23 @@ p {
 // keyframes
 
 @keyframes fade-in-next {
-    from {transform: translateX(15rem); opacity: 0;}
-    to {transform: translateX(0); opacity: 1;}
+    from {
+        transform: translateX(15rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 @keyframes fade-in-prev {
-    from {transform: translateX(-15rem); opacity: 0;}
-    to {transform: translateX(0); opacity: 1;}
+    from {
+        transform: translateX(-15rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

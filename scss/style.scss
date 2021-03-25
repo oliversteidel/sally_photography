@@ -40,10 +40,7 @@
     right: 1.25rem;
     z-index: 11;
 
-    .far,
-    .fab {
-        color: $primary-color;
-        font-size: 1.5rem;
+    a + a {
         margin-left: 1rem;
     }
 }
@@ -735,7 +732,7 @@ section {
 
 .modal {
     width: 100vw;
-    //height: 100vh;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -889,12 +886,14 @@ section {
     &__social-links-container {
         color: $primary-color;
         font-size: 2rem;
-        margin-bottom: 2rem;        
+        margin-bottom: 2rem;    
+        
+        a + a {
+            margin-left: 1rem;
+        }
     }
     
-    .fa-facebook-square {
-        margin-left: 1em;
-    }
+    
 
     &__links-container {
         margin-bottom: 2rem;
