@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //nav visibility animation on mobile
-    var navOpen = false;
+    let navOpen = false;
 
     //transform Burger Icon to cross
     const burgerOpen = () => {
@@ -38,10 +38,6 @@ $(document).ready(function () {
         }
     })
 
-    // $('.nav__link-wrapper').mouseout(function() {
-    //     turn = true;
-    // })
-
     //animation of nav__links
     $('.nav__link-wrapper').hover(function () {
         $(this).children(':first').toggleClass('link-up');
@@ -49,9 +45,9 @@ $(document).ready(function () {
     });
 
     //slideranimation
-    var turnCounter = 1;
-    var removeCounter = 1;
-    var addCounter = 2;
+    let turnCounter = 1;
+    let removeCounter = 1;
+    let addCounter = 2;
 
     const runSlider = () => {
         removeCounter = turnCounter;
@@ -61,7 +57,7 @@ $(document).ready(function () {
             addCounter = 1;
         }
 
-        for (var i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 5; i++) {
             $(".img" + i).removeClass("pos" + removeCounter);
             $(".img" + i).addClass("pos" + addCounter);
 
@@ -103,10 +99,9 @@ $(document).ready(function () {
         galleryImgArr.push($('.gallery__img' + i).attr("src"));
     }
 
-    const nextImg = (num, animation) => {
-        //gsap.to(".currentImg", { duration: 0.75, ease: "expo.out", x: -100, opacity: 0 });
+    const nextImg = (num, animation) => {        
         imgWrapper.empty();
-        var img = galleryImgArr[num];
+        let img = galleryImgArr[num];
         setImg(img, getImgRatio(img), animation);
     }
 
@@ -121,9 +116,17 @@ $(document).ready(function () {
         modalOpen = false;
     }
 
+    const getImgPosition = (el) => {
+        if ($(el).attr("class").length == 26) {
+            imgPos = $(el).attr("class").substr(-1);
+        } else {
+            imgPos = $(el).attr("class").substr(-2);
+        }
+    }
+
     //every image has "acr" or "up" for across/upright set in filename
     const getImgRatio = (attr) => {
-        var imgRatio = attr;
+        let imgRatio = attr;
         let isAcross = /acr/;
         return isAcross.test(imgRatio);
     }
@@ -136,9 +139,9 @@ $(document).ready(function () {
         }
     }
 
-    //hide evrything underneath modal
+    //hide everything underneath modal
 
-    const hideSide = (bool) => {
+    const hideSite = (bool) => {
         const logoContainer = $('.logo-container');
         const contactHead = $('.contact-head');
         const burgerMenu = $('.burger-menu');
@@ -157,17 +160,24 @@ $(document).ready(function () {
     }
 
     $('.gallery__img').click(function () {
-        if ($(this).attr("class").length == 26) {
-            imgPos = $(this).attr("class").substr(-1);
-        } else {
-            imgPos = $(this).attr("class").substr(-2);
-        }
-
-        var img = $(this).attr("src");
+        getImgPosition(this);
+        let img = $(this).attr("src");
         setImg(img, getImgRatio(img), "nextImg");
         openModal();
-        hideSide(true);
+        hideSite(true);
     });
+
+    $('.gallery__img').keyup(function(e) {
+        let code = e.key;
+        if(code === "Enter") {
+            getImgPosition(this);
+            let img = $(this).attr("src");
+            setImg(img, getImgRatio(img), "nextImg");
+            openModal();
+            hideSite(true);
+        }
+
+    })
 
     $('.modal__btn--next').click(function () {
         if (imgPos < galleryImgArr.length - 1) {
@@ -200,7 +210,7 @@ $(document).ready(function () {
 
     modalCloseBtn.click(() => {
         closeModal();
-        hideSide(false);
+        hideSite(false);
         imgWrapper.empty();
     });
 
@@ -208,8 +218,8 @@ $(document).ready(function () {
 
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
-    var xDown = null;
-    var yDown = null;
+    let xDown = null;
+    let yDown = null;
 
     function handleTouchStart(evt) {
         xDown = evt.touches[0].clientX;
@@ -220,10 +230,10 @@ $(document).ready(function () {
         if (!xDown || !yDown) {
             return;
         }
-        var xUp = evt.touches[0].clientX;
-        var yUp = evt.touches[0].clientY;
-        var xDiff = xDown - xUp;
-        var yDiff = yDown - yUp;
+        let xUp = evt.touches[0].clientX;
+        let yUp = evt.touches[0].clientY;
+        let xDiff = xDown - xUp;
+        let yDiff = yDown - yUp;
 
         if (Math.abs(xDiff) > Math.abs(yDiff)) {/*most significant*/
             if (xDiff > 0 && modalOpen) {
@@ -240,7 +250,7 @@ $(document).ready(function () {
                 }
             }
         }
-        // if swip up & down is needed
+        // if swipe up & down is needed
         // } else {
         //     if (yDiff > 0 && modalOpen) {
         //         /* up swipe */

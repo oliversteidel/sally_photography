@@ -26,6 +26,10 @@ html {
     //outline: 1px solid blue;
 }
 
+*:focus {
+    outline: dotted 2px $primary-color;
+}
+
 body {
     // overflow-x: hidden;
     height: 100%;
@@ -129,6 +133,10 @@ p {
 
 .jc-sb {
     justify-content: space-between;
+}
+
+.span2 {
+    grid-column-end: span 2;
 }
 
 .hide-on-large {
