@@ -53,9 +53,9 @@ p {
   margin-bottom: 3rem; }
 
 .cta {
-  width: 190px;
-  height: 50px;
+  padding: 1em 2em;
   margin-bottom: 2rem;
+  font-family: "Raleway", sans-serif !important;
   font-size: 1rem;
   color: #a26952;
   background: white;
@@ -63,15 +63,9 @@ p {
   cursor: pointer;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in; }
-  .cta a {
-    font-family: inherit;
-    -webkit-transition: color 0.4s ease-in;
-    transition: color 0.4s ease-in; }
 
 .cta:hover {
-  background-color: #a26952; }
-
-.cta:hover a {
+  background: #a26952;
   color: white; }
 
 .social-link {
@@ -266,7 +260,7 @@ p {
             perspective-origin: center;
     position: relative; }
   .nav__link {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     line-height: 1.5em;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
@@ -283,7 +277,7 @@ p {
     opacity: 0; }
   .nav .bottom {
     position: absolute;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     color: #a26952;
     opacity: 0.5;
     -webkit-backface-visibility: hidden;
@@ -295,7 +289,8 @@ p {
     -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out;
     transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-out;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out; }
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-in-out;
+    cursor: pointer; }
   .nav .bottom-down {
     -webkit-transform: translateY(-100%) rotateX(-0.25turn);
             transform: translateY(-100%) rotateX(-0.25turn);
@@ -560,7 +555,6 @@ section {
     height: 2rem;
     position: relative;
     margin-left: 85%;
-    margin-top: 4%;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -587,8 +581,8 @@ section {
     width: 100%; }
     @media only screen and (orientation: landscape) {
       .modal__img-wrapper {
-        -webkit-transform: translateY(-3.125rem);
-                transform: translateY(-3.125rem); } }
+        -webkit-transform: translateY(-1rem);
+                transform: translateY(-1rem); } }
   .modal .nextImg {
     -webkit-animation: fade-in-next 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9);
             animation: fade-in-next 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9); }
@@ -625,7 +619,7 @@ section {
       width: 60%;
       height: auto; }
   .modal .up {
-    width: 80vmin;
+    width: 100vmin;
     height: auto;
     -ms-flex-item-align: center;
         align-self: center; }
@@ -638,13 +632,11 @@ section {
     width: 90vmin;
     height: auto;
     -ms-flex-item-align: center;
-        align-self: center;
-    margin-top: 20vh; }
+        align-self: center; }
     @media only screen and (orientation: landscape) {
       .modal .acr {
         height: 90vh;
-        width: auto;
-        margin-top: 0; } }
+        width: auto; } }
 
 .closed {
   display: none; }

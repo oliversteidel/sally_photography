@@ -44,6 +44,11 @@ $(document).ready(function () {
         $(this).children(':last').toggleClass('bottom-down');
     });
 
+    $('.nav__link-wrapper').click(function () {
+        $(this).children(':first').toggleClass('link-up');
+        $(this).children(':last').toggleClass('bottom-down');
+    });
+
     //slideranimation
     let turnCounter = 1;
     let removeCounter = 1;
@@ -152,10 +157,12 @@ $(document).ready(function () {
             content.forEach(item => {
                 item.css('visibility', 'hidden');
             });
+            $('body').css('background', 'black');
         } else {
             content.forEach(item => {
                 item.css('visibility', 'visible');
             });
+            $('body').css('background', 'white');
         }
     }
 
