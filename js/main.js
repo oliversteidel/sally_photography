@@ -112,13 +112,16 @@ $(document).ready(function () {
 
     const openModal = () => {
         modal.removeClass('closed');
-        modal.css('opacity', '1');
-        modalOpen = true;
+        gsap.to(modal, {duration: 0.5, ease:"circ.in", opacity: 1, onComplete: function() {
+            modalOpen = true;
+        }});        
     }
 
     const closeModal = () => {
-        modal.addClass('closed');
-        modalOpen = false;
+        gsap.to(modal, {duration: 0.5, ease:"circ.out", opacity: 0, onComplete: function() {
+            modal.addClass('closed');
+            modalOpen = false;
+        }});       
     }
 
     const getImgPosition = (el) => {
@@ -155,14 +158,14 @@ $(document).ready(function () {
         const content = [logoContainer, contactHead, burgerMenu, container];
         if (bool) {
             content.forEach(item => {
-                item.css('visibility', 'hidden');
+                gsap.to(item, {duration: 0.5, ease: "circ.out", opacity: 0});
             });
-            $('body').css('background', 'black');
+            //$('body').css('background', 'black');
         } else {
             content.forEach(item => {
-                item.css('visibility', 'visible');
+                gsap.to(item, {duration: 0.5, ease: "circ.in", opacity: 1});
             });
-            $('body').css('background', 'white');
+            //$('body').css('background', 'white');
         }
     }
 
