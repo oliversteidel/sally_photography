@@ -30,7 +30,8 @@ a:link,
 a:active {
   text-decoration: none;
   font-family: "Playfair Display", serif;
-  color: #a26952; }
+  color: #a26952;
+  outline: none; }
 
 h1,
 h2,
@@ -67,22 +68,6 @@ p {
 .cta:hover {
   background: #a26952;
   color: white; }
-
-.social-link {
-  width: 1.5rem;
-  height: 1.5rem;
-  background: #a26952;
-  -webkit-mask-size: cover;
-          mask-size: cover;
-  cursor: pointer; }
-
-.social-link--fb {
-  -webkit-mask: url(../images/icon-facebook.svg);
-          mask: url(../images/icon-facebook.svg); }
-
-.social-link--insta {
-  -webkit-mask: url(../images/icon-instagram.svg);
-          mask: url(../images/icon-instagram.svg); }
 
 .flex {
   display: -webkit-box;
@@ -307,14 +292,15 @@ main {
               transform: translateY(0); } }
 
 section {
-  padding: 0 1.25rem;
+  padding: 7.5rem 1.25rem 0 1.25rem;
   margin-bottom: 3rem; }
   @media only screen and (min-width: 64.0625rem) {
     section {
-      padding: 0 1.25rem 0 0; } }
+      padding: 7.5rem 1.25rem 0 0; } }
 
 .hero {
   height: 100vh;
+  padding-top: 0;
   margin-bottom: 3rem; }
   .hero__headline {
     margin-top: 3rem;
@@ -633,7 +619,7 @@ section {
   font-size: 2rem;
   margin-bottom: 2rem; }
   .footer__social-links-container a + a {
-    margin-left: 1rem; }
+    margin-left: 2rem; }
 
 .footer__links-container {
   margin-bottom: 2rem; }

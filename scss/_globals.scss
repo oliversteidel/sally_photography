@@ -45,6 +45,7 @@ a:active {
     text-decoration: none;
     font-family: "Playfair Display", serif;
     color: $primary-color;
+    outline: none;
 }
 
 h1,
@@ -88,21 +89,7 @@ p {
     color: $bg-color;
 }
 
-.social-link {
-    width: 1.5rem;
-    height: 1.5rem;
-    background: $primary-color;
-    mask-size: cover;
-    cursor: pointer;
-}
 
-.social-link--fb {
-    mask: url(../images/icon-facebook.svg);
-}
-
-.social-link--insta {
-    mask: url(../images/icon-instagram.svg);
-}
 
 // helper classes
 

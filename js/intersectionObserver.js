@@ -12,11 +12,11 @@ $(document).ready(function () {
 
     
 
-    const threshold = 0.5;
+    const threshold = 0.4;
 
     document.querySelectorAll('section').forEach(el => {
-        const elHeight = el.getBoundingClientRect().height;        
-        var th = threshold;
+        let elHeight = el.getBoundingClientRect().height;        
+        let th = threshold;
 
         // if element is too tall to ever hit the threshold - change threshold
 

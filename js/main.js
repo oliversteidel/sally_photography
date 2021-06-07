@@ -159,13 +159,11 @@ $(document).ready(function () {
         if (bool) {
             content.forEach(item => {
                 gsap.to(item, {duration: 0.5, ease: "circ.out", opacity: 0});
-            });
-            //$('body').css('background', 'black');
+            });            
         } else {
             content.forEach(item => {
                 gsap.to(item, {duration: 0.5, ease: "circ.in", opacity: 1});
-            });
-            //$('body').css('background', 'white');
+            });           
         }
     }
 
@@ -271,18 +269,7 @@ $(document).ready(function () {
         /* reset values */
         xDown = null;
         yDown = null;
-    };
-
-    // scroll to section animation
-
-    $('.nav__link-wrapper').click(function (event) {
-        event.preventDefault();
-        let target = $(this).children().first().attr('href');
-        $('html,body').animate({
-            scrollTop: $(target).offset().top - 100
-        }, 500);
-    });
-
+    };    
 });
 
 
