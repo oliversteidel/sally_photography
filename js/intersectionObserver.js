@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
-    const rotateLink = (id) => {
+    const rotateLink = (id) => {        
         $('.nav__link--' + id).removeClass('link-up');
         $('.nav__link--' + id).siblings().addClass('bottom-down');
     }
 
-    const backToDefault = (id) => {
+    const backToDefault = (id) => {        
         $('.nav__link--' + id).addClass('link-up');
         $('.nav__link--' + id).siblings().removeClass('bottom-down');
     }
@@ -25,9 +25,9 @@ $(document).ready(function () {
         }
 
         new IntersectionObserver(iEls => iEls.forEach(iEl => {
-            if (iEl.isIntersecting) {                
+            if (iEl.isIntersecting) {                  
                 rotateLink(iEl.target.classList[0]);
-            }else {
+            }else {                
                 backToDefault(iEl.target.classList[0]);
             }
         }), {threshold: th}).observe(el);
