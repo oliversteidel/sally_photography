@@ -39,15 +39,17 @@ $(document).ready(function () {
     })
 
     //animation of nav__links
-    $('.nav__link-wrapper').hover(function () {
+    $('.nav__link-wrapper').hover(function (e) {        
         $(this).children(':first').toggleClass('link-up');
         $(this).children(':last').toggleClass('bottom-down');
     });
 
-    $('.nav__link-wrapper').click(function () {
-        $(this).children(':first').toggleClass('link-up');
-        $(this).children(':last').toggleClass('bottom-down');
-    });
+    //ISSUE: weird behaviour while navigating through page; sometimes highlighted sometimes not;
+    //
+    // $('.nav__link-wrapper').click(function () {
+    //     $(this).children(':first').toggleClass('link-up');
+    //     $(this).children(':last').toggleClass('bottom-down');
+    // });
 
     //slideranimation
     let turnCounter = 1;
@@ -103,13 +105,7 @@ $(document).ready(function () {
     for (let i = 0; i <= $('.gallery__img').length - 1; i++) {
         galleryImgArr.push($('.gallery__img' + i).attr("src"));
     }
-
-    const nextImg = (num, animation) => {        
-        imgWrapper.empty();
-        let img = galleryImgArr[num];
-        setImg(img, getImgRatio(img), animation);
-    }
-
+    
     const openModal = () => {
         modal.removeClass('closed');
         gsap.to(modal, {duration: 0.5, ease:"circ.in", opacity: 1, onComplete: function() {
@@ -124,19 +120,10 @@ $(document).ready(function () {
         }});       
     }
 
-    const getImgPosition = (el) => {
-        if ($(el).attr("class").length == 26) {
-            imgPos = $(el).attr("class").substr(-1);
-        } else {
-            imgPos = $(el).attr("class").substr(-2);
-        }
-    }
-
-    //every image has "acr" or "up" for across/upright set in filename
-    const getImgRatio = (attr) => {
-        let imgRatio = attr;
-        let isAcross = /acr/;
-        return isAcross.test(imgRatio);
+    const nextImg = (num, animation) => {        
+        imgWrapper.empty();
+        let img = galleryImgArr[num];
+        setImg(img, getImgRatio(img), animation);
     }
 
     const setImg = (src, ratioAcr, animation) => {
@@ -147,8 +134,23 @@ $(document).ready(function () {
         }
     }
 
-    //hide everything underneath modal
+    //every image has "acr" or "up" for across/upright set in filename
+    //returns true if img-ratio is across
+    const getImgRatio = (attr) => {
+        let imgRatio = attr;
+        let isAcross = /acr/;
+        return isAcross.test(imgRatio);
+    }
 
+    const getImgPosition = (el) => {
+        if ($(el).attr("class").length == 26) {
+            imgPos = $(el).attr("class").substr(-1);
+        } else {
+            imgPos = $(el).attr("class").substr(-2);
+        }
+    }    
+
+    //hide everything underneath modal
     const hideSite = (bool) => {
         const logoContainer = $('.logo-container');
         const contactHead = $('.contact-head');
@@ -184,8 +186,7 @@ $(document).ready(function () {
             openModal();
             hideSite(true);
         }
-
-    })
+    });
 
     $('.modal__btn--next').click(function () {
         if (imgPos < galleryImgArr.length - 1) {

@@ -570,6 +570,8 @@ section {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    border: none;
+    background: none;
     cursor: pointer; }
     .modal__btn--prev img, .modal__btn--next img, .modal__btn--close img {
       height: 100%;
