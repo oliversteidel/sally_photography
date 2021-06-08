@@ -46,10 +46,10 @@ $(document).ready(function () {
 
     //ISSUE: weird behaviour while navigating through page; sometimes highlighted sometimes not;
     //
-    // $('.nav__link-wrapper').click(function () {
-    //     $(this).children(':first').toggleClass('link-up');
-    //     $(this).children(':last').toggleClass('bottom-down');
-    // });
+    $('.nav__link-wrapper').click(function () {
+        $(this).children(':first').toggleClass('link-up');        
+        $(this).children(':last').toggleClass('bottom-down');
+    });
 
     //slideranimation
     let turnCounter = 1;

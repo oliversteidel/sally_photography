@@ -26,11 +26,12 @@
 
 .logo__img {
     width: 6.25rem;
-    height: auto;
+    height: 6.25rem;
     z-index: 1;
 
     @media only screen and (min-width: $medium) {
         width: 7.5rem;
+        height: 7.5rem;
     }
 }
 
@@ -511,7 +512,7 @@ section {
     bottom: -50px;
     background: $bg-color;
     z-index: 1000;
-    opacity: 0;        
+    opacity: 0;
 
     &__img-wrapper {
         width: 100%;
@@ -521,7 +522,7 @@ section {
         overflow: hidden;
 
         @media only screen and (orientation: landscape) {
-           height: 100vh;
+            height: 100vh;
         }
     }
 
@@ -533,7 +534,7 @@ section {
         animation: fade-in-prev 0.75s forwards cubic-bezier(0.38, 0.1, 0.05, 0.9);
     }
 
-    &__btn-container {        
+    &__btn-container {
         padding: 0.5rem 3rem;
         height: 60px;
         border-bottom: 1px solid $primary-color;
@@ -542,16 +543,16 @@ section {
             display: none;
         }
     }
-    
+
     &__btn--prev,
     &__btn--next,
     &__btn--close {
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;  
+        justify-content: center;
         border: none;
-        background: none;     
+        background: none;
         cursor: pointer;
 
         img {
@@ -573,7 +574,7 @@ section {
             height: 90vh;
             width: auto;
             margin-top: 0;
-        }        
+        }
     }
 
     .acr {
@@ -584,12 +585,12 @@ section {
         @media only screen and (orientation: landscape) {
             height: 90vh;
             width: auto;
-        }        
+        }
     }
 }
 
 .closed {
-    display: none;    
+    display: none;
 }
 
 // ##### END MODAL #####
@@ -624,8 +625,6 @@ section {
         a + a {
             margin-left: 2rem;
         }
-
-        
     }
 
     &__links-container {

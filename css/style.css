@@ -170,11 +170,12 @@ p {
 
 .logo__img {
   width: 6.25rem;
-  height: auto;
+  height: 6.25rem;
   z-index: 1; }
   @media only screen and (min-width: 64.0625rem) {
     .logo__img {
-      width: 7.5rem; } }
+      width: 7.5rem;
+      height: 7.5rem; } }
 
 .contact-head {
   position: fixed;
