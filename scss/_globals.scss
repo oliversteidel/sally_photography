@@ -30,6 +30,10 @@ html {
     outline: dotted 2px $primary-color;
 }
 
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
 body {
     // overflow-x: hidden;
     height: 100%;

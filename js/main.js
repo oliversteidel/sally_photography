@@ -7,14 +7,14 @@ $(document).ready(function () {
     const burgerOpen = () => {
         $('.burger-menu__line--middle').css('opacity', '0');
         $('.burger-menu__line--top').css('transform', 'translateY(10px) rotate(45deg)');
-        $('.burger-menu__line--bottom').css('transform', 'translateY(-10px) rotate(-45deg');
+        $('.burger-menu__line--bottom').css('transform', 'translateY(-10px) rotate(-45deg)');
     }
 
     //tranform Burger Icon to default
     const burgerClose = () => {
         $('.burger-menu__line--middle').css('opacity', '1');
         $('.burger-menu__line--top').css('transform', 'rotate(0)');
-        $('.burger-menu__line--bottom').css('transform', 'rotate(0');
+        $('.burger-menu__line--bottom').css('transform', 'rotate(0)');
     }
 
     $('.burger-menu').click(() => {
@@ -38,18 +38,31 @@ $(document).ready(function () {
         }
     })
 
-    //animation of nav__links
-    $('.nav__link-wrapper').hover(function (e) {        
+    //animation of nav__links / show highlighted link
+    $('.nav__link-wrapper').mouseenter(function () {        
         $(this).children(':first').toggleClass('link-up');
         $(this).children(':last').toggleClass('bottom-down');
     });
 
-    //ISSUE: weird behaviour while navigating through page; sometimes highlighted sometimes not;
-    //
-    $('.nav__link-wrapper').click(function () {
-        $(this).children(':first').toggleClass('link-up');        
-        $(this).children(':last').toggleClass('bottom-down');
+    //turn link back to default if the link was not clicked
+    $('.nav__link-wrapper').mouseleave(function () { 
+        if(!linkClicked) {
+            $(this).children(':first').toggleClass('link-up');
+            $(this).children(':last').toggleClass('bottom-down');
+        }              
+        linkClicked = false;
     });
+
+    let linkClicked = false;
+    
+    $('.nav__link-wrapper').click(function () {
+        linkClicked = true;
+        if(window.matchMedia("(hover: none").matches) {
+            $(this).children(':first').toggleClass('link-up');        
+            $(this).children(':last').toggleClass('bottom-down');
+        }
+    });
+    console.log(window.matchMedia("(hover: none").matches);
 
     //slideranimation
     let turnCounter = 1;

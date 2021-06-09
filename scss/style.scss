@@ -156,7 +156,7 @@ main {
 }
 
 section {
-    padding: 7.5rem 1.25rem 0 1.25rem;
+    padding: 6.5rem 1.25rem 0 1.25rem;
     margin-bottom: 3rem;
 
     @media only screen and (min-width: $medium) {
@@ -535,8 +535,10 @@ section {
     }
 
     &__btn-container {
-        padding: 0.5rem 3rem;
+        width: 100%;        
         height: 60px;
+        padding: 0.5rem;
+        justify-content: space-evenly;
         border-bottom: 1px solid $primary-color;
 
         @media only screen and (orientation: landscape) and (max-width: 1000px) {
