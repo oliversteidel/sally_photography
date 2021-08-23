@@ -62,7 +62,7 @@ $(document).ready(function () {
             $(this).children(':last').toggleClass('bottom-down');
         }
     });
-    console.log(window.matchMedia("(hover: none").matches);
+    
 
     //slideranimation
     let turnCounter = 1;

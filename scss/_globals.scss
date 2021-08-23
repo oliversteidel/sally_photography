@@ -2,11 +2,11 @@ $bg-color: white;
 $primary-color: #a26952;
 //#a26952
 
-$small: 23.75rem;
-$medium: 64.0625rem;
-$large: 120.0625rem;
+$small: 23.75em;
+$medium: 64.0625em;
+$large: 120.0625em;
 
-$max-width: 160rem;
+$max-width: 160em;
 
 html {
     font-size: 100%;
@@ -35,7 +35,7 @@ html {
 }
 
 body {
-    // overflow-x: hidden;
+    
     height: 100%;
     width: 100vw;
     max-width: $max-width;
